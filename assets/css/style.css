@@ -1,0 +1,714 @@
+:root {
+    --primary-gradient: linear-gradient(to bottom, #feb626, #ff620b);
+    --primary-purple: #6d48ff;
+    --primary-yellow: #feb626;
+    --primary-orange: #f3531d;
+    --primary-white: #ffffff;
+    --primary-black: #000000;
+    --light-bg: #f8fafc;
+    --card-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --hover-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+/* Base Styles */
+body {
+    font-family: 'Vazirmatn', sans-serif;
+    line-height: 1.8;
+    color: var(--secondary-color);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)),
+                url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 160px 0;
+    color: white;
+    text-align: right;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    max-width: 100%;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow: var(--card-shadow);
+    position: relative;
+    z-index: 1;
+    display: block;
+}
+
+.hero-image-wrapper {
+    position: relative;
+    padding: 20px;
+    margin: 2rem auto;
+    max-width: 500px;
+}
+
+.hero-image-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-purple);
+    border-radius: 25px;
+    transform: rotate(-2deg);
+    z-index: 0;
+}
+
+/* Cards and Components */
+.benefit-card {
+    transition: all 0.3s ease;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: var(--card-shadow);
+    text-align: right;
+    background: white;
+    height: 100%;
+    overflow: hidden;
+    border-top: 4px solid transparent;
+    padding: 2rem;
+    margin: 0;
+}
+
+.benefit-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--hover-shadow);
+}
+
+.benefit-card:nth-child(1) { border-top-color: #ff620b; }
+.benefit-card:nth-child(2) { border-top-color: #6d48ff; }
+.benefit-card:nth-child(3) { border-top-color: #feb626; }
+
+/* Stats Section */
+.stats-item {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
+    height: 100%;
+    margin: 0;
+}
+
+.stats-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+}
+
+.stats-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #ff620b;
+    margin-bottom: 0.5rem;
+}
+
+.stats-label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--secondary-color);
+}
+
+/* Forms */
+.form-control {
+    text-align: right;
+    padding: 0.8rem 1rem;
+    border-radius: 0.75rem;
+    border: 1px solid #e2e8f0;
+    font-size: 1rem;
+}
+
+.form-control:focus {
+    border-color: var(--primary-purple);
+    box-shadow: 0 0 0 3px rgba(109, 72, 255, 0.1);
+}
+
+/* Buttons */
+.btn-primary {
+    background: linear-gradient(to bottom, #feb626, #ff620b);
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(to bottom, #feb626, #ff620b);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(255, 98, 11, 0.3);
+}
+
+/* Sections */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 3rem;
+    color: var(--secondary-color);
+}
+
+.highlight-section {
+    background: var(--primary-gradient);
+    color: white;
+    padding: 2rem 0;
+}
+
+.section-light { background-color: var(--light-bg); }
+.section-purple { background-color: #6d48ff; color: white; }
+.section-yellow { background-color: #feb626; color: var(--primary-black); }
+
+.section-padding { padding: 6rem 0; }
+.section-padding-sm { padding: 4rem 0; }
+
+/* Footer */
+.footer {
+    background-color: var(--primary-black);
+    color: var(--primary-white);
+}
+
+.footer-links a, 
+.footer-contact a {
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.footer-links a:hover, 
+.footer-contact a:hover {
+    color: var(--primary-purple) !important;
+    transform: translateX(-5px);
+}
+
+.social-links a {
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    color: var(--primary-purple) !important;
+    transform: translateY(-3px);
+}
+
+/* Utilities */
+.gradient-text {
+    background: linear-gradient(to bottom, #feb626, #ff620b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section-separator {
+    padding: 2rem 0;
+}
+
+.section-divider {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #ff620b, transparent);
+    opacity: 0.2;
+}
+
+.emoji-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Animations */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-title { font-size: 2.5rem; max-width: 100%; }
+    .section-title { font-size: 2rem; }
+    .stats-number { font-size: 2.5rem; }
+    .section-padding { padding: 4rem 0; }
+    .benefit-card { margin-bottom: 1rem; }
+    .hero-section {
+        padding: 80px 0;
+    }
+    
+    .hero-image-wrapper {
+        padding: 15px;
+        margin: 1rem auto;
+    }
+
+    .hero-image-wrapper::before {
+        transform: rotate(-1deg);
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section { padding: 60px 0; }
+    .hero-title { font-size: 2rem; }
+    .btn-lg { 
+        padding: 0.5rem 1.5rem;
+        font-size: 1rem;
+    }
+    .stats-item { margin-bottom: 1rem; }
+    .hero-image-wrapper {
+        padding: 10px;
+        margin: 0.5rem auto;
+    }
+}
+
+/* Update section background colors */
+.section-alternate-1 {
+    background-color: var(--primary-white);
+}
+
+.section-alternate-2 {
+    background-color: var(--light-bg);
+}
+
+.section-alternate-3 {
+    background: linear-gradient(135deg, var(--primary-purple), #8b6fff);
+    color: var(--primary-white);
+}
+
+.section-alternate-4 {
+    background: linear-gradient(135deg, #ff7a2e, var(--primary-orange));
+    color: var(--primary-white);
+}
+
+/* Update text colors for dark background sections */
+.section-alternate-3 .section-title,
+.section-alternate-4 .section-title {
+    color: var(--primary-white);
+}
+
+.section-alternate-3 .card-text,
+.section-alternate-4 .card-text {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Add subtle patterns to sections */
+.section-pattern {
+    position: relative;
+    overflow: hidden;
+}
+
+.section-pattern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.1;
+}
+
+/* Update purple section text colors */
+.section-alternate-3 .benefit-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 4px solid var(--primary-yellow);
+}
+
+.section-alternate-3 .benefit-card:first-child {
+    border-top-color: var(--primary-orange);
+}
+
+.section-alternate-3 .benefit-card:last-child {
+    border-top-color: var(--primary-yellow);
+}
+
+.section-alternate-3 .card-title {
+    color: var(--primary-white);
+}
+
+.section-alternate-3 .card-text,
+.section-alternate-3 .list-unstyled li {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.section-alternate-3 .benefit-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Update checkmark color in purple section */
+.section-alternate-3 .list-unstyled li::before {
+    color: var(--primary-yellow);
+}
+
+/* Update link colors */
+a {
+    color: var(--primary-purple);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-orange);
+}
+
+/* Update footer contact icons to use purple */
+.footer-contact .bi {
+    color: var(--primary-purple) !important;
+}
+
+/* Update text-primary class */
+.text-primary {
+    color: var(--primary-purple) !important;
+}
+
+/* Update footer links */
+.footer-links a, 
+.footer-contact a {
+    color: var(--primary-white) !important;
+}
+
+.footer-links a:hover, 
+.footer-contact a:hover,
+.social-links a:hover {
+    color: var(--primary-purple) !important;
+}
+
+/* Update social links default color */
+.social-links a {
+    color: var(--primary-white) !important;
+}
+
+/* Update any Bootstrap text-primary classes */
+.text-primary,
+.bi.text-primary {
+    color: var(--primary-purple) !important;
+}
+
+/* Update scroll to top button styles */
+.scroll-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--primary-purple);
+    color: var(--primary-white);
+    border: none;
+    box-shadow: var(--card-shadow);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Different states for the scroll button */
+.scroll-to-top.on-purple {
+    background: var(--primary-yellow);
+    color: var(--primary-black);
+}
+
+.scroll-to-top.on-light {
+    background: var(--primary-purple);
+    color: var(--primary-white);
+}
+
+.scroll-to-top.on-dark {
+    background: var(--primary-white);
+    color: var(--primary-black);
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--hover-shadow);
+    opacity: 1;
+}
+
+.scroll-to-top.on-purple:hover {
+    background: var(--primary-white);
+}
+
+.scroll-to-top.on-light:hover {
+    background: var(--primary-orange);
+}
+
+.scroll-to-top.on-dark:hover {
+    background: var(--primary-yellow);
+}
+
+.scroll-to-top.visible {
+    opacity: 0.9;
+    visibility: visible;
+}
+
+.scroll-to-top i {
+    font-size: 1.5rem;
+}
+
+@media (max-width: 576px) {
+    .scroll-to-top {
+        bottom: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .scroll-to-top i {
+        font-size: 1.2rem;
+    }
+}
+
+/* Add these styles for the universities section */
+.university-card {
+    background: var(--primary-white);
+    backdrop-filter: none;
+    border: 1px solid #e2e8f0;
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+}
+
+.university-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--primary-gradient);
+}
+
+.university-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: var(--hover-shadow);
+}
+
+.university-logo {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    background: var(--light-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--card-shadow);
+}
+
+.university-logo i {
+    color: var(--primary-purple);
+}
+
+.text-purple {
+    color: var(--primary-purple) !important;
+}
+
+.university-info h5 {
+    color: var(--primary-black);
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.university-info .country {
+    color: var(--primary-purple);
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.university-info .ranking {
+    color: var(--primary-black);
+    font-size: 0.9rem;
+    padding: 0.25rem 0.75rem;
+    background: var(--light-bg);
+    border-radius: 1rem;
+    display: inline-block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .university-card {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Add these styles for the countries section */
+.country-card {
+    background: var(--primary-white);
+    border-radius: 1rem;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    height: 100%;
+    box-shadow: var(--card-shadow);
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+}
+
+.country-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--primary-gradient);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.country-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+}
+
+.country-card:hover::before {
+    opacity: 1;
+}
+
+.country-flag {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.country-card h4 {
+    color: var(--primary-black);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.country-card p {
+    color: #64748b;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+/* Add hover effect for country cards */
+.country-card:hover .country-flag {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .country-card {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Update card containers for consistent alignment */
+.row.g-4 {
+    --bs-gutter-x: 2rem; /* Consistent gutter size */
+    --bs-gutter-y: 2rem;
+}
+
+/* Update stats items */
+.stats-item {
+    height: 100%;
+    padding: 2rem;
+    margin: 0;
+}
+
+/* Container padding consistency */
+.container {
+    padding-right: var(--bs-gutter-x, 1.5rem);
+    padding-left: var(--bs-gutter-x, 1.5rem);
+}
+
+/* Ensure columns have consistent widths */
+.col-lg-3,
+.col-lg-4,
+.col-lg-6 {
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .row.g-4 {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 1.5rem;
+    }
+    
+    .benefit-card,
+    .university-card,
+    .country-card,
+    .stats-item {
+        padding: 1.5rem;
+    }
+}
+
+/* Update card title spacing */
+.card-title {
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Update for cards in purple sections */
+.section-alternate-3 .card-title {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Add to your existing CSS */
+.submit-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.8);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.success-toast {
+    font-family: 'Vazirmatn', sans-serif;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+.error-toast {
+    font-family: 'Vazirmatn', sans-serif;
+    font-size: 16px;
+    border-radius: 8px;
+}
